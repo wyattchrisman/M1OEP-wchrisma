@@ -126,6 +126,7 @@ public:
     {
         outs << "Title: " << left << setw(25) << mov.getTitle();
         outs << endl;
+        outs << endl;
         outs << "Release Year: " << left << setw(5) << mov.getYear();
         outs << endl;
         outs << "Genre(s): " << left << setw(26) << mov.getGenre();
@@ -225,23 +226,14 @@ void getDataFromFile(string filename, vector<Movie>& movies)
         {
             inFile >> quote;
             getline(inFile, description, '"');
-            inFile >> comma;
-
         }
         else
         {
-            getline(inFile, description, ',');
+            getline(inFile, description, '"');
         }
 
         movies.push_back(Movie(title, year, genre, length, director, actor, description));
     }
     inFile.close();
 }
-
-
-
-
-
-
 #endif //M1OEP_WCHRISMA_MOVIE_H
-
