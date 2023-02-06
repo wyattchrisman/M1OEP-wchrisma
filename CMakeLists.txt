@@ -7,5 +7,5 @@ include_directories(.)
 
 add_executable(M1OEP_wchrisma
         main.cpp
-        movies.csv
-        README.md)
+        Movie.h
+)
